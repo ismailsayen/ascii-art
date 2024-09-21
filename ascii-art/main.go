@@ -48,9 +48,7 @@ func main() {
 
 	result := Split(sentence)
 
-	res := PrintChar(result, symboles)
-
-	fmt.Println(res)
+	fmt.Println(PrintChar(result, symboles))
 }
 
 func Split(sen string) []string {
@@ -67,7 +65,7 @@ func Split(sen string) []string {
 			}
 			sl = append(sl, "")
 			i++
-		} else if sen[i] != ' ' && sen[i] != '\t' {
+		} else if sen[i] != '\t' {
 			a += string(sen[i])
 		} else {
 			if a != "" {
