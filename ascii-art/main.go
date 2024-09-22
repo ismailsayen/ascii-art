@@ -83,8 +83,9 @@ func Split(sen string) []string {
 func PrintChar(words []string, sl [][]string) string {
 	char := ""
 	for _, w := range words {
-		for i := 1; i < 9; i++ {
+		for i := 1; i <= 8; i++ {
 			if len(w) == 0 {
+				char += "\n"
 				break
 			}
 			for _, e := range w {
@@ -99,9 +100,10 @@ func PrintChar(words []string, sl [][]string) string {
 				char += "\n"
 			}
 		}
-		char += "\n"
 	}
-	if char[len(char)-1] == '\n' {
+	if char[len(char)-1] == '\n' && len(words) == 1 {
+		return strings.Trim(char, "\n")
+	} else if char[len(char)-1] == '\n' && char[len(char)-2] == '\n' {
 		char = char[:len(char)-1]
 	}
 	return char
