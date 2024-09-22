@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 )
@@ -92,8 +93,7 @@ func PrintChar(words []string, sl [][]string) string {
 				if 0 <= int(e)-32 && int(e)-32 <= len(sl)-1 {
 					char += sl[int(e)-32][i]
 				} else {
-					fmt.Println("character not found")
-					break
+					log.Fatal("This error")
 				}
 			}
 			if i < 8 {
