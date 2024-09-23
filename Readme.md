@@ -3,12 +3,12 @@ Ascii-art is a program which consists in receiving a string as an argument and o
 
 What we mean by a graphic representation using ASCII, is to write the string received using ASCII characters, as you can see in the example below:
 
- _              _   _          
-| |            | | | |         
-| |__     ___  | | | |   ___   
-|  _ \   / _ \ | | | |  / _ \  
-| | | | |  __/ | | | | | (_) | 
-|_| |_|  \___| |_| |_|  \___/  
+ _              _   _                                                    .
+| |            | | | |                                                   .                      
+| |__     ___  | | | |   ___                                             .
+|  _ \   / _ \ | | | |  / _ \                                            .
+| | | | |  __/ | | | | | (_) |                                           .
+|_| |_|  \___| |_| |_|  \___/                                            .
                                
                                
 
