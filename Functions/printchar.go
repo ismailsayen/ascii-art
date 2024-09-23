@@ -2,6 +2,7 @@ package asciiart
 
 import (
 	"log"
+	"strings"
 )
 
 func PrintChar(words []string, slice [][]string) string {
@@ -24,6 +25,8 @@ func PrintChar(words []string, slice [][]string) string {
 			}
 		}
 	}
-	
+	if str[len(str)-1] == '\n' && len(words) == 1 {
+		return strings.Trim(str, "\n")
+	}
 	return str
 }
