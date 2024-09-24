@@ -2,10 +2,9 @@ package asciiart
 
 import (
 	"log"
-	"strings"
 )
 
-func PrintChar(words []string, slice [][]string) string {
+func PrintWords(words []string, slice [][]string) string {
 	str := ""
 	for _, w := range words { // ici pour mainipuler element par element
 		for i := 1; i <= 8; i++ { // pour printer les lignes
@@ -25,9 +24,7 @@ func PrintChar(words []string, slice [][]string) string {
 			}
 		}
 	}
-	if str[len(str)-1] == '\n' && len(words) == 1 {
-		return strings.Trim(str, "\n")
-	} else if !ContainChar(str) {
+	if !ContainChar(str) {
 		str = str[:len(str)-1]
 	}
 

@@ -10,7 +10,6 @@ func Split(str string) []string {
 			// si oui on verifie si il y'a qlq chose avant \n
 			if newStr != "" {
 				slice = append(slice, newStr)
-
 				newStr = ""
 			}
 			// à la place de /n on ajoute un "" pour eviter le probleme de la duplication d \n

@@ -12,7 +12,7 @@ import (
 func main() {
 	// Vérifie si l'utilisateur a passé exactement un argument.
 	if len(os.Args) != 2 {
-		fmt.Println("please enter a word")
+		fmt.Println("not enough arguments")
 		return
 	}
 
@@ -28,7 +28,8 @@ func main() {
 
 	// Vérifie que le mot n'est pas vide
 	if len(sentence) == 0 {
-		log.Fatal("Erreur: Please enter a Word.")
+		// log.Fatal("Empty words not allowed!")
+		return
 	}
 
 	scanner := bufio.NewScanner(file) // Initialise un scanner pour lire le fichier ligne par ligne
@@ -39,8 +40,7 @@ func main() {
 
 	// Boucle à travers chaque ligne du fichier texte
 	for scanner.Scan() {
-		line := scanner.Text()
-		symbole = append(symbole, line)
+		symbole = append(symbole, scanner.Text())
 		count++
 
 		// Chaque symbole ASCII dans ce format est constitué de 9 lignes
@@ -54,8 +54,8 @@ func main() {
 	if len(symboles) < 95 {
 		log.Fatal("Please make sure all characters are present in the file.")
 	}
-
-	result := asciiart.PrintChar(asciiart.Split(sentence), symboles)
+	// fmt.Println("\n\n\n")
+	result := asciiart.PrintWords(asciiart.Split(sentence), symboles)
 
 	// Affiche le résultat
 	fmt.Println(result)
